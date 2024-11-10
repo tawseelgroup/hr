@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sevillana&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+.header {
+  background: red;
+}
+
+.sevillana-regular {
+  font-weight: 400;
+  font-style: normal;
+}
+
+#box1:hover {
+  background-color: yellow;
+}
+
+.look{
+  background-color: green;
+}
+
+.inputstyle{
+  border: 1px solid lightgray;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+  width: 200px;
+}

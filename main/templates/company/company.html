@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+ {% block content %}
+ <section class='grid grid-cols-7 min-h-[93vh] relative '>
+    <sidebar class='hidden sm:block sm:grid-cols-1  me-2 sticky top-0 w-full bg-slate-200'>
+
+        <div class=' fixed top-16  sm:w-48  sm:max-w-48'>
+          <h1 class='text-3xl text-start font-bold text-gray-600 my-2'>{{com.compname}}</h1>
+          <h1 class='text-3xl text-start font-bold text-gray-600 my-2'>{{com.id}}</h1>
+          <ul class'flex flex-col  sm:max-w-64 '>
+            <a href="{% url 'iqama' id=com.id %}" class='block hover:bg-white hover:vorder hover:border-slate-500 hover:text-blue-500 w-full px-3 py-2  rounded-ee-md rounded-se-md'>الاقامات</a>
+            <a href="{% url 'contract' com.id  %}" class='block hover:bg-white hover:vorder hover:border-slate-500 hover:text-blue-500 w-full px-3 py-2  rounded-ee-md rounded-se-md'>العقود</a>
+            <a href="{% url 'payroll' com.id %}" class='block hover:bg-white hover:vorder hover:border-slate-500 hover:text-blue-500 w-full px-3 py-2  rounded-ee-md rounded-se-md'>الرواتب</a>
+            <a href="{% url 'fleet' com.id %}" class='block hover:bg-white hover:vorder hover:border-slate-500 hover:text-blue-500 w-full px-3 py-2  rounded-ee-md rounded-se-md'>النقليات</a>
+            <a href="{% url 'tasks' com.id %}" class='block hover:bg-white hover:vorder hover:border-slate-500 hover:text-blue-500 w-full px-3 py-2  rounded-ee-md rounded-se-md'>المهام</a>
+            {% comment %} <a href="{% url "others" %}" class='block hover:bg-blue-400 hover:text-white w-full px-3 py-2  rounded-ee-md rounded-se-md'>اخري</a> {% endcomment %}
+          </ul>
+        </div>
+    </sidebar>
+    <main class='col-span-5 sm:col-span-5 mx-5 my-3'>
+        <h1 class='text-3xl text-start font-bold text-gray-600 my-2'>{{com.compname}}</h1>
+        <h1 class='text-3xl text-start font-bold text-gray-600 my-2'>{{com.id}}</h1>
+       {% block hrStatus %}{% endblock hrStatus %}
+
+    </main>
+
+ </section>
+{% endblock content %}

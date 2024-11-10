@@ -1,0 +1,35 @@
+{% extends "./company.html" %}
+
+{% block hrStatus %}
+    <h1>Iqama</h1>
+    <table class=' rounded-md    w-1/2 m-auto my-2 overflow-hidden'>
+        <tr class='border border-gray-200 p-2'>
+        <th class='py-2 bg-gray-200'>Name</th>
+        <th class='py-2 bg-gray-200'>Salary</th>
+        <th class='py-2 bg-gray-200'>Nationality</th>
+        </tr>
+        {% for e in emp %}
+        <tr class='border border-gray-200  py-5 hover:bg-gray-100 cursor-pointer'>
+            <td class='py-2 px-2'>
+                {{e.name}}
+            </td>
+            <td class=' text-center py-2 px-2'>
+                {{e.salary}}
+            </td>
+            <td class='py-2 px-2'>
+                {{e.nationality}}
+            </td>
+            <td>
+                    <a href="{% url 'employeeiqama' c=com.id e=e.id %}" class="bg-gray-200 p-4 w-1/2 m-auto h-1/2">
+                        ...
+                    </a>
+
+                </td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+
+{% endblock hrStatus %}
+{% block empiqama %}dfgdfg{% endblock  %}

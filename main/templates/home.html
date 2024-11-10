@@ -1,0 +1,79 @@
+{% extends "base.html" %} 
+
+{% block content %}
+<main class=>
+
+</main>
+<div class='bg-gradient-to-tr bg-slate-50 to-fuchsia-500 min-h-[93vh]'>
+    <div class="mx-auto grid grid-cols-1 sm:grid-cols-3 pt-16 w-full xl:w-1/2 place-items-center gap-y-2">
+        {% for c in com %}
+        <a
+          href="{{c.get_absolute_url}}"
+          class="relative bg-white w-52 rounded-sm border text-decoration-none text-gray-500 text-lg font-bold px-2 py-2 text-center  border-gray-200  hover:bg-blue-400 hover:text-white after:border after:border-lime-600 after:absolute after:top-3"
+        >
+
+          <div>{{c.compname}}</div>
+          <div>{{c.location}}</div>
+          <div class="absolute bottom-1 left-2 rounded-full w-6 bg-blue-400 text-white p-0 text-xs">{{c.employees}}</div>
+          
+        </a>
+        {% endfor %}
+</div>
+
+<section class='w-1/2 xl:w-1/4 m-auto flex flex-col gap-y-3 mt-12'>
+  <div class="flex">
+    <div class="bg-red-500 text-white p-3">س</div>
+    <a href="download_pdf" class="subject p-3 border flex-1 bg-white">السياسات واللوائح</a>
+  </div>
+
+  <div class="flex">
+    <div class="bg-blue-500 text-white p-3">س</div>
+    <a href="{% url 'open_pdf' %}" target="_blank" class="subject p-3 border flex-1 bg-white">Open PDF</a>
+
+  </div>
+
+  <div class="flex">
+    <div class="bg-green-500 text-white p-3">س</div>
+    <a href="#" class="subject p-3 border flex-1 bg-white">الخدمات</a>
+  </div>
+
+
+
+</section>
+
+<section class='grid grid-cols-2 w-1/2 m-auto my-12 gap-3 '>
+  <div class='rounded-md shadow-md border w-72 p-4 place-self-center bg-white'>
+    <h1 class='font-bold text-lg text-blue-700'>المؤشرات العامة</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe reiciendis nam doloribus!</p>
+  </div>
+  <div class='rounded-md shadow-md border w-72 p-4 place-self-center bg-white'>
+    <h1 class='font-bold text-lg text-blue-700'>مجال العمل</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe reiciendis nam doloribus!</p>
+  </div>
+  <div class='rounded-md shadow-md border w-72 p-4 place-self-center bg-white'>
+    <h1 class='font-bold text-lg text-blue-700'>التدريب</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe reiciendis nam doloribus!</p>
+  </div>
+  <div class='rounded-md shadow-md border w-72 p-4 place-self-center bg-white'>
+    <h1 class='font-bold text-lg text-blue-700'>النظم والاجراءات</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe reiciendis nam doloribus!</p>
+  </div>
+
+</section>
+
+<section class=" m-auto w-1/2">
+  <form action="prods" method="post">
+    {% csrf_token %}
+    <div>
+      <input type="checkbox" name="b1" id="b1" class=" text-gray-400" value="b1">
+      <label for="b1">SA-509</label>
+    </div>
+    <input type="checkbox" name="b2" id="b2" class=" text-gray-400" value="b2">
+    <input type="checkbox" name="b3" id="b3" class="block text-gray-400" value="b3">
+    <input type="checkbox" name="b4" id="b4" class="block text-gray-400" value="b4">
+    <input type="checkbox" name="b5" id="b5" class="block text-gray-400" value="b5">
+    <input type="checkbox" name="b6" id="b6" class="block text-gray-400" value="b6">
+    <button class="bg-green-600 text-white px-3 py-2 my-5">Submit</button>
+  </form>
+</section>
+{% endblock %}

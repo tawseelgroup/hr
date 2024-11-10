@@ -1,0 +1,10 @@
+
+{% extends "./company.html" %}
+
+{% block hrStatus %}
+    <h1>Fleet</h1>
+    {% for e in emp %}
+    <h1>{{e.name}}</h1>
+    {% endfor %}  
+{% endblock hrStatus %}
+

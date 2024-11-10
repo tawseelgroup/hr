@@ -1,0 +1,13 @@
+{% extends "./company.html" %}
+
+
+
+
+
+{% block hrStatus %}
+    <div class='mx-auto w-1/2 my-3'>
+    <h1>Employee Iqama</h1>
+    <h1>{{emp.name}}</h1>
+    
+    <a href="{% url "main" %}">back</a>
+{% endblock  %}
